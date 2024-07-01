@@ -156,7 +156,7 @@ def get_all_versions():
     except FileNotFoundError:
         vp = ''
     try:
-        result = srun(['recursion', '-version'], capture_output=True, text=True)
+        result = srun(['ffmpeg', '-version'], capture_output=True, text=True)
         vf = result.stdout.split('\n')[0].split(' ')[2].split('ubuntu')[0]
     except FileNotFoundError:
         vf = ''
